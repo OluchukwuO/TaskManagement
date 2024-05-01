@@ -1,0 +1,36 @@
+<!-- app/views/home/index.html.erb -->
+<div class="container-fluid hero-section bg-dark text-light py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h1 class="display-4">Task Management Application</h1>
+        <p class="lead">Effortlessly organize your tasks and projects with our intuitive task management application.</p>
+        <%= link_to 'Get Started', users_new_path, class: 'btn btn-primary' %>
+        <% if current_user.present? %>
+          <%= button_to "Logout", sessions_destroy_path, method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure you want to log out?" } %>
+        <% end %>
+        </div>
+      <div class="col-md-6">
+        <!-- You can add an image or illustration here -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Organize Tasks</h2>
+      <p>Easily create, manage, and prioritize tasks with our intuitive task management system.</p>
+    </div>
+    <div class="col-md-4">
+      <h2>Collaborate Effortlessly</h2>
+      <p>Assign tasks to team members and track progress collaboratively for better project management.</p>
+    </div>
+    <div class="col-md-4">
+      <h2>Stay on Track</h2>
+      <p>Set due dates, prioritize tasks, and receive notifications to ensure deadlines are met.</p>
+    </div>
+  </div>
+</div>
