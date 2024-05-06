@@ -20,6 +20,10 @@
           <%= form.label :username, class: "form-label" %>
           <%= form.text_field :username, class: "form-control", required: true %>
         </div>
+        <div class="mb-3">
+          <%= form.label :role, class: "form-label" %>
+          <%= form.select :role, options_for_select([['Manager', 'manager'], ['Developer', 'developer']]) %>
+        </div>
         <%= form.submit "Register", class: "btn btn-primary" %>
       <% end %>
       <%= link_to 'Sign in', sessions_new_path, class: 'btn btn-primary' %>
