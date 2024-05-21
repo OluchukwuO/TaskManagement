@@ -5,10 +5,14 @@
       <div class="col-md-6">
         <h1 class="display-4">Task Management Application</h1>
         <p class="lead">Effortlessly organize your tasks and projects with our intuitive task management application.</p>
-        <%= link_to 'Get Started', users_new_path, class: 'btn btn-primary' %>
         <% if current_user.present? %>
+          <%= link_to 'Go to Dashboard', "#", class: 'btn btn-primary' %>
           <%= button_to "Logout", sessions_destroy_path, method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure you want to log out?" } %>
-          <%= link_to 'Add Project',  new_project_path, class: 'btn btn-success' %>
+          <% if current_user.manager? %>
+            <%= link_to 'Add Project', new_project_path, class: 'btn btn-success' %>
+          <% end %>
+        <% else %>
+          <%= link_to 'Get Started', users_new_path, class: 'btn btn-primary' %>
         <% end %>
         </div>
       <div class="col-md-6">

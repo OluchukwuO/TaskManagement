@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post 'users/create'
   root 'home#index'
   resources :projects
+  resources :tasks
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
